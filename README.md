@@ -1,11 +1,3 @@
-author: Pablo Olvera Colino
-summary: Bastionado del arranque del sistema
-id: bastionado_Proyecto_1_1
-categories: codelab,markdown
-environments: Web
-status: Published
-feedback link: Un enlace en el que los usuarios puedan darte feedback (quizás creando un issue en un repositorio de git)
-analytics account: ID de Google Analytics
 # Proyecto 1: Bastionado del arranque del sistema
 
 ## Parte 1: Opciones de seguridad de la Bios
