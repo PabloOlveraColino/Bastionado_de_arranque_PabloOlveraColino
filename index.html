@@ -1,0 +1,118 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Proyecto 1: Bastionado del arranque del sistema</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid="ID de Google Analytics"
+                  id="Opciones_de_seguridad_de_la_BIOS"
+                  title="Proyecto 1: Bastionado del arranque del sistema"
+                  environment="web"
+                  feedback-link="Un enlace en el que los usuarios puedan darte feedback (quizás creando un issue en un repositorio de git)">
+    
+      <google-codelab-step label="Introducción: Opciones de seguridad de la Bios" duration="0">
+        <p>La BIOS y UEFI son componentes muy importantes de los dispositivos informáticos. El objetivo es explorar las diversas opciones de seguridad que ofrecen, como la protección por contraseña y el arranque seguro. Al bastionar el arranque de un sistema nos protegemos contra accesos sin autorización a configuraciones que pueden ser críticas en un equipo informático.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Contraseña de administración de la BIOS" duration="0">
+        <p>La contraseña de administración de la BIOS protege la configuración del firmware del sistema haciendo que usuarios no autorizados accedan a la BIOS y modifiquen la configuración del hardware, el orden de arranque, la habilitación/deshabilitción de dispositivos y otras opciones críticas.</p>
+<p>En la siguiente imagen de la BIOS, seleccionamos <strong>Set Administrator Password</strong> y le damos a <em>Enter</em>.</p>
+<p class="image-container"><img alt="alt text" src="img/9278e9c6a8c5c3d3.png"></p>
+<p>Introducimos una contraseña y la confirmamos y ya está activada.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Contraseña de usuario de la BIOS" duration="0">
+        <p>Es otra capa de seguridad que nos permite controlar el acceso a la configuración del sistema, aunque ésta solo permite acceder a la BIOS para ver información, sin hacer modificaciones. Esto puede sernos útil para prevenir que otros cambien configuraciones críticas.</p>
+<p>El mismo procedimiento será para añadir una contraseña al usuario.</p>
+<p>Una vez lo hagamos, nos saldrá como <strong>Set</strong>.</p>
+<p class="image-container"><img alt="alt text" src="img/228b6bd68bdf69da.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Contraseña de arranque del dispositivo" duration="0">
+        <p>La contraseña Power-On o de HDD solicita una contraseña para poder arrancar el equipo.</p>
+<p>Nos dirigimos a la pestaña <strong>Segurity</strong> y le damos a <em>Set Hard Disk Password</em>.</p>
+<p class="image-container"><img alt="alt text" src="img/8f41259af175e170.png"></p>
+<p>Presionamos <em>Enter</em> y escribimos una contraseña y la confirmamos.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Permiso para el arranque desde dispositivos USB" duration="0">
+        <p>Es una opción que nos permite o impide arrancar el sistema desde dispositivos USB o discos duros externos. Es útil para instalar sistemas operativos, realizar diagnósticos o recuperar datos.</p>
+<p>Sin embargo, puede poner en riesgo la seguridad del equipo, especialmente en entornos corporativos. Cualquiera podría iniciar el sistema con un USB malicioso.</p>
+<p>Para <strong>deshabilitarlo</strong>, vamos a la pestaña <strong>Boot</strong>.</p>
+<p class="image-container"><img alt="alt text" src="img/4142d545bca97ac8.png"></p>
+<p>En USB Boot, seleccionamos <em>Enabled</em> y lo dejamos como <em>Disabled</em>.</p>
+<p class="image-container"><img alt="alt text" src="img/d66b41db957bfde6.png"><img alt="alt text" src="img/25a235d8a908c6b8.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Orden de arranque" duration="0">
+        <p>Es una configuración que determina el dispositivo desde el cual se iniciará el sistema operativo en un equipo. Si no encuentra el sistema operativo en el primero, continuará con el segundo y así sucesivamente.</p>
+<p>Desde la pestaña de Boot, en <strong>Boot Priority Order</strong>, podemos modificarlo a nuestro gusto o según necesidad.</p>
+<p class="image-container"><img alt="alt text" src="img/c2f3979c9485d7fe.png"></p>
+<p>Ahí podemos ver que la primera opción es el cargador de arranque de Windows seguido de unidades de almacenamiento SSD y un disco duro externo HDD.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Secure Boot" duration="0">
+        <p>Es una característica que se encuentra en la mayoría de sistemas UEFI. Su propósito es proteger el proceso de arranque del sistema al asegurarse de que solo se ejecute software de arranque firmado y verificado por el fabricante.</p>
+<p>Utiliza una base de datos de claves y certificados de confianza. Si el software que se intenta cargar está firmado, se permite su ejecución.</p>
+<p>Con esto evitamos que se ejecute software no autorizado durante el arranque, Secure boot nos ayuda a proteger el sistema contra malware que intente interferir en el inicio.</p>
+<p>En la siguiente captura de la BIOS que estamos configurando, nos situamos en la pestaña <strong>Security</strong>.</p>
+<p class="image-container"><img alt="alt text" src="img/6c947f305ea1127c.png"></p>
+<p>En la opción <strong>Secure Boot</strong>, lo dejamos con <em>Enabled</em>.</p>
+<p class="image-container"><img alt="alt text" src="img/988335dcc76e6ac8.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Intel Platform Trust Technology (PTT)" duration="0">
+        <p>Nos proporciona una plataforma segura que utiliza tecnologías de seguridad integradas en el procesador. Nos permite proteger los datos y las claves de encriptación. A diferencia de un TMP físico, PTT se ejecuta como un servicio dentro del firmware del procesador. Esto implica que es más difícil de manipular sin acceso físico al dispositivo, además de que puede beneficiarse de actualizaciones del firmware para corregir posibles vulnerabilidades.</p>
+<p>En la pestaña de <strong>Security</strong>, nos situamos en <strong>Intel Plateform Trust Technology</strong>.</p>
+<p class="image-container"><img alt="alt text" src="img/46966eae633966ec.png"></p>
+<p>Está habilitada por defecto, pero presionando <em>Enter</em> y seleccionando <em>Enabled</em> ya lo activamos.</p>
+<p class="image-container"><img alt="alt text" src="img/3b4e77fd2f4c025d.png"></p>
+<p>Finalmente, para guardar todas estas configuraciones que hemos hecho para bastionar el arranque de nuestro sistema, vamos a la pestaña <strong>Exit</strong>.</p>
+<p class="image-container"><img alt="alt text" src="img/948dcde5c4119f68.png"></p>
+<p>Presionamos <em>Enter</em> en <strong>Exit Saving Changes</strong> y aceptamos.</p>
+<p class="image-container"><img alt="alt text" src="img/265fcbb708c3195f.png"></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
