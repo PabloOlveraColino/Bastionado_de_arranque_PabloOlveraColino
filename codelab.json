@@ -1,0 +1,25 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2024-11-06T14:20:15+01:00",
+  "id": "opciones_de_seguridad_de_la_bios",
+  "duration": 0,
+  "title": "Proyecto 1: Bastionado del arranque del sistema",
+  "summary": "Bastionado del arranque del sistema",
+  "source": "/home/pablo/CECEGS/Bastionado_Redes/Proyecto_1_Bastionado_del_arranque_del_sistema/Parte_1/Proyecto1-1.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "codelab",
+    "markdown"
+  ],
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/PabloOlveraColino/Bastionado_de_arranque_PabloOlveraColino",
+  "url": "opciones_de_seguridad_de_la_bios"
+}
